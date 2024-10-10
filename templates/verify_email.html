@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+  {% csrf_token %}
+  <label for="code">Tasdiqlash kodingizni kiriting:</label>
+  <input type="text" name="confirmation_code" id="code" required>
+  <button type="submit">Tasdiqlash</button>
+  {% if error %}
+  <p style="color:red;">{{ error }}</p>
+  {% endif %}
+</form>
+
+</body>
+</html>
